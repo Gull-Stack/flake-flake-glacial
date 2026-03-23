@@ -1,6 +1,15 @@
 ---
 layout: base.njk
 ---
+
+{% if heroImage %}
+<!-- Henderson Hero Image -->
+<div class="relative h-[300px] w-full overflow-hidden">
+  <img src="{{ heroImage.src }}" alt="{{ heroImage.alt }}" class="absolute inset-0 w-full h-full object-cover brightness-[0.7]" />
+  <div class="absolute inset-0 bg-primary/30"></div>
+</div>
+{% endif %}
+
 <!-- Hero -->
 <section class="relative pt-24 pb-24 px-8 overflow-hidden">
   <div class="max-w-5xl mx-auto">
