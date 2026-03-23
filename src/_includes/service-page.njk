@@ -1,0 +1,107 @@
+---
+layout: base.njk
+---
+<!-- Hero -->
+<section class="relative pt-32 pb-24 px-6 md:px-12 overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <div class="absolute -top-[20%] -left-[10%] w-[500px] h-[500px] bg-secondary opacity-5 aurora-blur rounded-full"></div>
+    <div class="absolute top-[40%] right-[0%] w-[300px] h-[300px] bg-white opacity-3 aurora-blur rounded-full"></div>
+  </div>
+  <div class="relative z-10 max-w-5xl mx-auto">
+    <span class="text-secondary font-black text-xs uppercase tracking-widest block mb-4">{{ serviceLabel }}</span>
+    <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[0.95] mb-6">{{ heroHeadline }}</h1>
+    <p class="text-on-surface-variant text-lg md:text-xl max-w-3xl leading-relaxed font-light">{{ heroSubheadline }}</p>
+  </div>
+</section>
+
+<!-- Problem Section -->
+{% if problems %}
+<section class="py-20 px-6 md:px-12 bg-surface-container">
+  <div class="max-w-5xl mx-auto">
+    <span class="text-secondary font-black text-xs uppercase tracking-widest block mb-4">The Problem</span>
+    <h2 class="text-3xl md:text-4xl font-black tracking-tighter mb-12">Does This Sound Familiar?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {% for problem in problems %}
+      <div class="p-8 bg-surface-container-high hover:bg-surface-bright transition-colors">
+        <h3 class="text-lg font-bold mb-3">{{ problem.title }}</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">{{ problem.desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- Solution / Content Section -->
+<section class="py-20 px-6 md:px-12">
+  <div class="max-w-5xl mx-auto">
+    <span class="text-secondary font-black text-xs uppercase tracking-widest block mb-4">The Solution</span>
+    <h2 class="text-3xl md:text-4xl font-black tracking-tighter mb-8">{{ solutionHeadline }}</h2>
+    <div class="text-on-surface-variant text-lg leading-relaxed space-y-6 max-w-3xl">
+      {{ content | safe }}
+    </div>
+  </div>
+</section>
+
+<!-- Services List -->
+{% if servicesList %}
+<section class="py-20 px-6 md:px-12 bg-surface-container">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-black tracking-tighter mb-12">What We Handle</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {% for item in servicesList %}
+      <div class="flex items-start gap-4 p-6 bg-surface-container-high">
+        <span class="material-symbols-outlined text-secondary text-xl mt-1">check_circle</span>
+        <span class="text-on-surface text-sm font-medium">{{ item }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- Attorney -->
+<section class="py-20 px-6 md:px-12">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-black tracking-tighter mb-8">Your Attorney</h2>
+    <div class="flex items-center gap-6 p-8 border-l-2 border-secondary bg-surface-container/50">
+      <span class="material-symbols-outlined text-secondary text-3xl">verified</span>
+      <div>
+        <h3 class="font-bold text-xl text-on-background">{{ attorney }}</h3>
+        <p class="text-on-surface-variant text-sm">{{ attorneyTitle }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+{% if faqs %}
+<section class="py-20 px-6 md:px-12 bg-surface-container">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-black tracking-tighter mb-12">Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      {% for faq in faqs %}
+      <details class="group bg-surface-container-high p-6 cursor-pointer">
+        <summary class="flex justify-between items-center font-bold text-on-surface">
+          {{ faq.q }}
+          <span class="material-symbols-outlined text-secondary group-open:rotate-45 transition-transform">add</span>
+        </summary>
+        <p class="mt-4 text-on-surface-variant text-sm leading-relaxed">{{ faq.a }}</p>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- CTA -->
+<section class="py-24 px-6 md:px-12 text-center relative overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(14,165,233,0.08)_0%,_transparent_70%)]"></div>
+  <div class="relative z-10 max-w-3xl mx-auto">
+    <h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-6">{{ ctaHeadline | default("Ready to Take Action?") }}</h2>
+    <p class="text-on-surface-variant text-lg mb-10">Schedule a free consultation to discuss your case.</p>
+    <a href="/contact/" class="inline-block bg-white text-background px-10 py-5 font-black uppercase text-sm tracking-widest hover:bg-secondary hover:text-white hover:shadow-[0_0_30px_rgba(14,165,233,0.4)] transition-all rounded">
+      Free Consultation
+    </a>
+  </div>
+</section>
