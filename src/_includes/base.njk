@@ -1,100 +1,240 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>{{ title }} | Flake & Flake Attorneys at Law</title>
-<meta name="description" content="{{ description | default('Flake & Flake Attorneys at Law — Estate Planning, Probate, Personal Injury, and Federal Civil Litigation in Henderson & Las Vegas, Nevada.') }}"/>
-<meta property="og:title" content="{{ title }} | Flake & Flake"/>
-<meta property="og:description" content="{{ description | default('Plan for the inevitable and recover from the unexpected.') }}"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://flakeandflake.com{{ page.url }}"/>
-<link rel="canonical" href="https://flakeandflake.com{{ page.url }}"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script>
-tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        "background": "#05040F",
-        "surface": "#05040F",
-        "surface-container": "#0a0f1e",
-        "surface-container-low": "#0b0d17",
-        "surface-container-high": "#0f172a",
-        "surface-container-highest": "#1a1d2d",
-        "surface-bright": "#1e293b",
-        "on-surface": "#f8fafc",
-        "on-surface-variant": "#94a3b8",
-        "on-background": "#f8fafc",
-        "primary": "#ffffff",
-        "on-primary": "#05040f",
-        "secondary": "#0ea5e9",
-        "secondary-container": "#075985",
-        "on-secondary": "#ffffff",
-        "tertiary": "#64748b",
-        "outline": "#475569",
-        "outline-variant": "#334155",
-        "inverse-surface": "#f8fafc",
-        "inverse-primary": "#0f172a",
-      },
-      fontFamily: {
-        "headline": ["Inter"],
-        "body": ["Inter"],
-        "label": ["Inter"]
-      },
-      borderRadius: {"DEFAULT": "4px", "lg": "4px", "xl": "4px", "full": "9999px"},
-    },
-  },
-}
-</script>
-<style>
-.material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-}
-.aurora-blur { filter: blur(120px); }
-.glass-card {
-  background: rgba(10, 15, 30, 0.6);
-  backdrop-filter: blur(24px);
-}
-.text-glow-primary { text-shadow: 0 0 15px rgba(255, 255, 255, 0.3); }
-.text-glow-secondary { text-shadow: 0 0 15px rgba(14, 165, 233, 0.4); }
-.aurora-footer {
-  background: linear-gradient(0deg, #020108 0%, #05040F 100%);
-  position: relative;
-  overflow: hidden;
-}
-.aurora-footer::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(ellipse at 20% 80%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
-              radial-gradient(ellipse at 80% 20%, rgba(186, 200, 220, 0.08) 0%, transparent 50%),
-              radial-gradient(ellipse at 50% 50%, rgba(100, 116, 139, 0.05) 0%, transparent 60%);
-  animation: auroraShift 25s ease-in-out infinite alternate;
-  pointer-events: none;
-}
-@keyframes auroraShift {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-5%, 3%) scale(1.05); }
-  100% { transform: translate(3%, -2%) scale(1); }
-}
-</style>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>{% if title %}{{ title }} | {% endif %}Flake & Flake - Henderson Nevada Attorneys</title>
+    <meta name="description" content="{{ description or 'Flake & Flake Attorneys in Henderson, Nevada. Specializing in Estate Planning, Probate, Personal Injury, Medical Malpractice, and Federal Claims.' }}"/>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet"/>
+    
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind Config for Glacial Theme -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#05040F",
+                        "on-secondary-container": "#e0f2fe",
+                        "surface-container-highest": "#1a1d2d",
+                        "on-tertiary-fixed": "#0a1d37",
+                        "tertiary-dim": "#94a3b8",
+                        "tertiary-container": "#1e293b",
+                        "primary-container": "#f8fafc",
+                        "surface-variant": "#111827",
+                        "outline": "#475569",
+                        "inverse-on-surface": "#94a3b8",
+                        "surface-tint": "#ffffff",
+                        "on-primary-fixed": "#05040f",
+                        "on-secondary-fixed-variant": "#0c4a6e",
+                        "secondary-fixed-dim": "#7dd3fc",
+                        "on-primary-fixed-variant": "#334155",
+                        "on-surface-variant": "#94a3b8",
+                        "primary-dim": "#e2e8f0",
+                        "primary-fixed-dim": "#cbd5e1",
+                        "error": "#ef4444",
+                        "secondary": "#0ea5e9",
+                        "on-tertiary-fixed-variant": "#1e293b",
+                        "surface-dim": "#05040f",
+                        "on-secondary-fixed": "#082f49",
+                        "on-background": "#f8fafc",
+                        "tertiary-fixed": "#cbd5e1",
+                        "tertiary": "#64748b",
+                        "secondary-container": "#075985",
+                        "primary-fixed": "#ffffff",
+                        "secondary-dim": "#38bdf8",
+                        "surface-container-high": "#0f172a",
+                        "surface-bright": "#1e293b",
+                        "outline-variant": "#334155",
+                        "secondary-fixed": "#bae6fd",
+                        "inverse-surface": "#f8fafc",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#f8fafc",
+                        "inverse-primary": "#0f172a",
+                        "error-container": "#7f1d1d",
+                        "primary": "#ffffff",
+                        "surface-container": "#0a0f1e",
+                        "surface-container-lowest": "#020617",
+                        "on-error": "#ffffff",
+                        "surface": "#05040f",
+                        "error-dim": "#f87171",
+                        "on-primary-container": "#0f172a",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#fecaca",
+                        "tertiary-fixed-dim": "#94a3b8",
+                        "surface-container-low": "#0b0d17",
+                        "on-primary": "#05040f",
+                        "on-tertiary-container": "#f8fafc"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "4px", "lg": "4px", "xl": "4px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .aurora-blur {
+            filter: blur(120px);
+        }
+        .glass-card {
+            background: rgba(10, 15, 30, 0.6);
+            backdrop-filter: blur(24px);
+        }
+        .text-glow-primary {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+        .text-glow-secondary {
+            text-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .glass-panel {
+            background: rgba(42, 40, 54, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+    
+    <!-- SEO -->
+    <meta property="og:title" content="{% if title %}{{ title }} | {% endif %}Flake & Flake - Henderson Nevada Attorneys"/>
+    <meta property="og:description" content="{{ description or 'Flake & Flake Attorneys in Henderson, Nevada. Specializing in Estate Planning, Probate, Personal Injury, Medical Malpractice, and Federal Claims.' }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://flakeandflake.com{{ page.url }}"/>
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LegalService",
+        "name": "Flake & Flake",
+        "description": "Law firm specializing in Estate Planning, Probate, Personal Injury, Medical Malpractice, and Federal Claims in Henderson, Nevada.",
+        "url": "https://flakeandflake.com",
+        "telephone": "(702) 818-1800",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "8905 S. Pecos Rd., Ste. 23B",
+            "addressLocality": "Henderson",
+            "addressRegion": "NV",
+            "postalCode": "89074",
+            "addressCountry": "US"
+        },
+        "foundingDate": "2024",
+        "areaServed": ["Henderson, NV", "Las Vegas, NV", "Southern Nevada"],
+        "attorney": [
+            {
+                "@type": "Person",
+                "name": "Jordan Flake",
+                "jobTitle": "Attorney",
+                "email": "jordan@flakeandflake.com"
+            },
+            {
+                "@type": "Person", 
+                "name": "Troy Flake",
+                "jobTitle": "Attorney",
+                "email": "troy@flakeandflake.com"
+            }
+        ]
+    }
+    </script>
 </head>
+
 <body class="bg-background text-on-background font-body selection:bg-secondary selection:text-white overflow-x-hidden">
+    <!-- TopAppBar -->
+    <header class="fixed top-0 w-full flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto bg-[#05040F]/80 backdrop-blur-2xl z-50 shadow-[0_0_20px_rgba(14,165,233,0.05)] border-b border-outline-variant/10">
+        <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-white rounded flex items-center justify-center">
+                <span class="text-black font-black text-lg">F&F</span>
+            </div>
+            <span class="text-2xl font-black tracking-tighter text-white">Flake & Flake</span>
+        </div>
+        <nav class="hidden md:flex items-center gap-10">
+            <a class="font-bold tracking-tighter uppercase text-sm Inter text-{% if page.url == '/' %}white border-b-2 border-white pb-1{% else %}outline hover:text-secondary transition-colors{% endif %}" href="/">Home</a>
+            <a class="font-bold tracking-tighter uppercase text-sm Inter text-{% if '/practice-areas' in page.url %}white border-b-2 border-white pb-1{% else %}outline hover:text-secondary transition-colors{% endif %}" href="/practice-areas/">Practice Areas</a>
+            <a class="font-bold tracking-tighter uppercase text-sm Inter text-{% if '/attorneys' in page.url %}white border-b-2 border-white pb-1{% else %}outline hover:text-secondary transition-colors{% endif %}" href="/attorneys/">Attorneys</a>
+            <a class="font-bold tracking-tighter uppercase text-sm Inter text-{% if page.url == '/contact/' %}white border-b-2 border-white pb-1{% else %}outline hover:text-secondary transition-colors{% endif %}" href="/contact/">Contact</a>
+        </nav>
+        <a href="/case-evaluation/" class="bg-primary text-on-primary px-8 py-3 font-black uppercase text-xs tracking-widest hover:bg-secondary hover:text-white hover:shadow-[0_0_20px_rgba(14,165,233,0.4)] transition-all duration-300 active:scale-95 rounded">
+            Free Consultation
+        </a>
+    </header>
 
-{% include "header.njk" %}
+    <main>
+        {{ content | safe }}
+    </main>
 
-<main>
-{{ content | safe }}
-</main>
-
-{% include "footer.njk" %}
+    <!-- Footer -->
+    <footer class="w-full py-16 px-12 grid grid-cols-1 md:grid-cols-4 gap-8 relative overflow-hidden bg-gradient-to-t from-[#020617] via-[#05040f] to-[#05040f]">
+        <!-- Aurora Background -->
+        <div class="absolute inset-0 pointer-events-none opacity-20">
+            <div class="absolute -bottom-[50%] -left-[20%] w-full h-full bg-[#0ea5e9] aurora-blur opacity-30"></div>
+            <div class="absolute -bottom-[60%] -right-[10%] w-full h-full bg-[#ffffff] aurora-blur opacity-20"></div>
+        </div>
+        
+        <div class="relative z-10 col-span-1 md:col-span-1">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 bg-white rounded flex items-center justify-center">
+                    <span class="text-black font-black text-sm">F&F</span>
+                </div>
+                <span class="text-xl font-black text-white">Flake & Flake</span>
+            </div>
+            <p class="text-on-surface-variant text-xs leading-relaxed max-w-xs uppercase tracking-wider font-medium">
+                Henderson Nevada law firm specializing in estate planning, probate, personal injury, and federal claims.
+            </p>
+        </div>
+        
+        <div class="relative z-10">
+            <h4 class="text-secondary text-xs font-black tracking-widest uppercase Inter mb-8">Navigation</h4>
+            <ul class="space-y-4">
+                <li><a class="text-xs font-medium tracking-widest uppercase Inter text-outline hover:text-white transition-colors duration-300 hover:underline decoration-white" href="/">Home</a></li>
+                <li><a class="text-xs font-medium tracking-widest uppercase Inter text-outline hover:text-white transition-colors duration-300 hover:underline decoration-white" href="/practice-areas/">Practice Areas</a></li>
+                <li><a class="text-xs font-medium tracking-widest uppercase Inter text-outline hover:text-white transition-colors duration-300 hover:underline decoration-white" href="/attorneys/">Attorneys</a></li>
+                <li><a class="text-xs font-medium tracking-widest uppercase Inter text-outline hover:text-white transition-colors duration-300 hover:underline decoration-white" href="/contact/">Contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="relative z-10">
+            <h4 class="text-secondary text-xs font-black tracking-widest uppercase Inter mb-8">Resources</h4>
+            <ul class="space-y-4">
+                <li><a class="text-xs font-medium tracking-widest uppercase Inter text-outline hover:text-white transition-colors duration-300 hover:underline decoration-white" href="/privacy-policy/">Privacy Policy</a></li>
+                <li><a class="text-xs font-medium tracking-widest uppercase Inter text-outline hover:text-white transition-colors duration-300 hover:underline decoration-white" href="/terms-of-service/">Terms of Service</a></li>
+                <li><a class="text-xs font-medium tracking-widest uppercase Inter text-outline hover:text-white transition-colors duration-300 hover:underline decoration-white" href="/disclaimer/">Disclaimer</a></li>
+                <li><a class="text-xs font-medium tracking-widest uppercase Inter text-outline hover:text-white transition-colors duration-300 hover:underline decoration-white" href="/sitemap.xml">Sitemap</a></li>
+            </ul>
+        </div>
+        
+        <div class="relative z-10">
+            <h4 class="text-secondary text-xs font-black tracking-widest uppercase Inter mb-8">Location</h4>
+            <div class="space-y-4 text-xs font-medium tracking-widest uppercase Inter text-outline">
+                <p>8905 S. Pecos Rd., Ste. 23B</p>
+                <p>Henderson, NV 89074</p>
+                <a class="block text-white mt-6 hover:text-secondary transition-colors" href="tel:+17028181800">(702) 818-1800</a>
+                <a class="block text-white hover:text-secondary transition-colors" href="mailto:info@flakeandflake.com">info@flakeandflake.com</a>
+            </div>
+        </div>
+        
+        <div class="relative z-10 col-span-full pt-16 mt-8 border-t border-outline-variant/10 flex justify-between items-center">
+            <span class="text-[10px] font-medium tracking-widest uppercase Inter text-outline">© 2024 Flake & Flake. All Rights Reserved.</span>
+            <span class="text-[10px] font-medium tracking-widest uppercase Inter text-outline">Powered by GullStack</span>
+        </div>
+    </footer>
 
 </body>
 </html>

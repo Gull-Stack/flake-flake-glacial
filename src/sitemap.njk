@@ -4,11 +4,25 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{%- for page in collections.all %}
+{%- for page in collections.all -%}
+  {%- if page.url -%}
   <url>
     <loc>https://flakeandflake.com{{ page.url }}</loc>
+    <lastmod>{{ page.date.toISOString().split('T')[0] }}</lastmod>
+    {%- if page.url == "/" -%}
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+    {%- elif "/services/" in page.url -%}
+    <priority>0.9</priority>
     <changefreq>monthly</changefreq>
+    {%- elif "/attorneys/" in page.url -%}
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    {%- else -%}
     <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    {%- endif -%}
   </url>
-{%- endfor %}
+  {%- endif -%}
+{%- endfor -%}
 </urlset>

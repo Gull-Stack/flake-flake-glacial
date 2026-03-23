@@ -1,54 +1,75 @@
 {
-  "name": "Flake & Flake Attorneys at Law",
-  "url": "https://flakeandflake.com",
-  "type": "LegalService",
-  "founded": "2025",
-  "founders": ["Jordan Flake", "Troy Flake"],
-  "location": {
-    "street": "8905 S. Pecos Rd., Ste. 23B",
-    "city": "Henderson",
-    "state": "NV",
-    "zip": "89074",
-    "country": "US"
+  "organization": {
+    "name": "Flake & Flake",
+    "legalName": "Flake & Flake",
+    "type": "Law Firm",
+    "founded": "2024",
+    "description": "Henderson Nevada law firm specializing in estate planning, personal injury, probate, and federal claims.",
+    "url": "https://flakeandflake.com",
+    "logo": "https://flakeandflake.com/images/logo.png"
   },
-  "phone": "(702) 818-1800",
-  "fax": "(702) 973-1999",
-  "emails": ["jordan@flakeandflake.com", "troy@flakeandflake.com"],
-  "jurisdiction": "Nevada",
-  "serviceArea": ["Henderson", "Las Vegas", "Southern Nevada"],
+  "contact": {
+    "address": {
+      "street": "8905 S. Pecos Rd., Ste. 23B",
+      "city": "Henderson",
+      "state": "NV",
+      "postalCode": "89074",
+      "country": "US"
+    },
+    "phone": "(702) 818-1800",
+    "fax": "(702) 973-1999",
+    "email": "info@flakeandflake.com"
+  },
   "practiceAreas": [
     "Estate Planning",
-    "Probate",
-    "FTCA / VA Medical Malpractice",
+    "Probate & Trust Administration", 
     "Personal Injury",
     "Medical Malpractice",
+    "FTCA / VA Medical Malpractice",
     "Business Law",
     "Contract Law"
+  ],
+  "serviceAreas": [
+    "Henderson, NV",
+    "Las Vegas, NV",
+    "Boulder City, NV",
+    "Green Valley, NV", 
+    "Summerlin, NV",
+    "Southern Nevada"
   ],
   "attorneys": [
     {
       "name": "Jordan Flake",
       "title": "Founding Partner",
-      "focus": "Estate Planning & Probate",
-      "education": "University of Michigan Law School",
-      "experience": "Nearly 20 years"
+      "email": "jordan@flakeandflake.com",
+      "specialties": ["Estate Planning", "Probate", "Trust Administration"],
+      "experience": "20+ years",
+      "education": "University of Michigan Law School, J.D.",
+      "barAdmissions": ["Nevada State Bar"]
     },
     {
-      "name": "Troy Flake",
+      "name": "Troy Flake", 
       "title": "Founding Partner",
-      "focus": "Litigation & Federal Practice",
-      "experience": "10+ years",
-      "priorRoles": ["Assistant United States Attorney", "SEC Trial Attorney"]
+      "email": "troy@flakeandflake.com",
+      "specialties": ["Personal Injury", "Medical Malpractice", "FTCA Claims"],
+      "experience": "10+ years federal litigation",
+      "background": "Former Assistant U.S. Attorney and SEC Trial Attorney",
+      "barAdmissions": ["Nevada State Bar"]
     }
   ],
-  "differentiators": [
-    "Brothers with complementary practice areas under one roof",
-    "Former federal prosecutor (AUSA) on staff",
-    "Former SEC Trial Attorney on staff",
-    "Free initial consultations",
-    "Contingency fees for injury cases — no upfront cost",
-    "Boutique firm attention with big-firm litigation capability"
-  ],
-  "freeConsultation": true,
-  "contingencyFees": true
+  "statistics": {
+    "combinedExperience": "50+ years",
+    "clientRecoveries": "$500M+",
+    "familiesServed": "1000+"
+  },
+  "businessHours": {
+    "monday": "8:00 AM - 6:00 PM",
+    "tuesday": "8:00 AM - 6:00 PM", 
+    "wednesday": "8:00 AM - 6:00 PM",
+    "thursday": "8:00 AM - 6:00 PM",
+    "friday": "8:00 AM - 6:00 PM",
+    "saturday": "9:00 AM - 2:00 PM",
+    "sunday": "Closed"
+  },
+  "lastUpdated": "2024-12-09T00:00:00Z"
 }
