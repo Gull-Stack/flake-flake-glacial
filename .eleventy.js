@@ -2,6 +2,7 @@ module.exports = function(eleventyConfig) {
   // Copy static files
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy("src/.well-known");
   eleventyConfig.addPassthroughCopy("src/js");
 
   // Watch CSS files for changes
