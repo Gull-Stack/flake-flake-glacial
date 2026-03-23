@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{{ title }} | Flake & Flake Attorneys at Law</title>
+<meta name="description" content="{{ description | default('Flake & Flake Attorneys at Law — Estate Planning, Probate, Personal Injury, and Federal Civil Litigation in Henderson & Las Vegas, Nevada.') }}"/>
+<meta property="og:title" content="{{ title }} | Flake & Flake"/>
+<meta property="og:description" content="{{ description | default('Plan for the inevitable and recover from the unexpected.') }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://flakeandflake.com{{ page.url }}"/>
+<link rel="canonical" href="https://flakeandflake.com{{ page.url }}"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "background": "#05040F",
+        "surface": "#05040F",
+        "surface-container": "#0a0f1e",
+        "surface-container-low": "#0b0d17",
+        "surface-container-high": "#0f172a",
+        "surface-container-highest": "#1a1d2d",
+        "surface-bright": "#1e293b",
+        "on-surface": "#f8fafc",
+        "on-surface-variant": "#94a3b8",
+        "on-background": "#f8fafc",
+        "primary": "#ffffff",
+        "on-primary": "#05040f",
+        "secondary": "#0ea5e9",
+        "secondary-container": "#075985",
+        "on-secondary": "#ffffff",
+        "tertiary": "#64748b",
+        "outline": "#475569",
+        "outline-variant": "#334155",
+        "inverse-surface": "#f8fafc",
+        "inverse-primary": "#0f172a",
+      },
+      fontFamily: {
+        "headline": ["Inter"],
+        "body": ["Inter"],
+        "label": ["Inter"]
+      },
+      borderRadius: {"DEFAULT": "4px", "lg": "4px", "xl": "4px", "full": "9999px"},
+    },
+  },
+}
+</script>
+<style>
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.aurora-blur { filter: blur(120px); }
+.glass-card {
+  background: rgba(10, 15, 30, 0.6);
+  backdrop-filter: blur(24px);
+}
+.text-glow-primary { text-shadow: 0 0 15px rgba(255, 255, 255, 0.3); }
+.text-glow-secondary { text-shadow: 0 0 15px rgba(14, 165, 233, 0.4); }
+.aurora-footer {
+  background: linear-gradient(0deg, #020108 0%, #05040F 100%);
+  position: relative;
+  overflow: hidden;
+}
+.aurora-footer::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at 20% 80%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 20%, rgba(186, 200, 220, 0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 50%, rgba(100, 116, 139, 0.05) 0%, transparent 60%);
+  animation: auroraShift 25s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+@keyframes auroraShift {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-5%, 3%) scale(1.05); }
+  100% { transform: translate(3%, -2%) scale(1); }
+}
+</style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-secondary selection:text-white overflow-x-hidden">
+
+{% include "header.njk" %}
+
+<main>
+{{ content | safe }}
+</main>
+
+{% include "footer.njk" %}
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "name": "flake-flake-law-firm",
+  "version": "1.0.0",
+  "description": "Law firm website for Flake & Flake Attorneys",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gull-Stack/flake-flake-glacial.git"
+  },
+  "keywords": [
+    "law-firm",
+    "attorneys",
+    "nevada",
+    "henderson"
+  ],
+  "author": "GullStack",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Gull-Stack/flake-flake-glacial/issues"
+  },
+  "homepage": "https://github.com/Gull-Stack/flake-flake-glacial#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.5",
+    "markdown-it": "^14.1.1"
+  }
+}
