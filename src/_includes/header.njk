@@ -1,9 +1,11 @@
 <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
-<div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-<a class="text-xl font-bold tracking-tighter text-primary font-headline" href="/">
-  <img src="/images/logos/flake-flake-logo.svg" alt="Flake & Flake Attorneys at Law" class="h-10 md:h-12 w-auto" />
+<div class="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-6 py-3">
+<a class="flex-shrink-0" href="/">
+  <img src="/images/logos/flake-flake-logo.svg" alt="Flake & Flake Attorneys at Law" class="h-7 md:h-10 w-auto" />
 </a>
-<div class="hidden md:flex space-x-8 items-center">
+
+<!-- Desktop Nav -->
+<div class="hidden lg:flex space-x-8 items-center">
 <!-- Practice Areas with dropdown -->
 <div class="relative group">
   <a class="text-slate-900 hover:text-primary transition-colors tracking-wide font-medium text-sm inline-flex items-center gap-1" href="/practice-areas/">
@@ -56,10 +58,88 @@
 <a class="text-slate-600 hover:text-slate-900 transition-colors tracking-wide font-medium text-sm" href="/about/">About Us</a>
 <a class="text-slate-600 hover:text-slate-900 transition-colors tracking-wide font-medium text-sm" href="/contact/">Contact</a>
 </div>
-<div class="flex items-center space-x-6">
-<a class="hidden sm:block text-slate-900 font-medium tracking-wide" href="tel:7028181800">(702) 818-1800</a>
-<a href="/contact/" class="bg-primary hover:bg-primary-container text-on-primary px-5 py-2.5 rounded-lg transition-all duration-300 scale-95 active:scale-90 font-medium text-sm">Free Consultation</a>
+
+<!-- Desktop CTA -->
+<div class="hidden lg:flex items-center space-x-6">
+<a class="hidden sm:block text-slate-900 font-medium tracking-wide text-sm" href="tel:7028181800">(702) 818-1800</a>
+<a href="/contact/" class="bg-primary hover:bg-primary-container text-on-primary px-5 py-2.5 rounded-lg transition-all duration-300 font-medium text-sm">Free Consultation</a>
+</div>
+
+<!-- Mobile: Phone + Hamburger -->
+<div class="flex lg:hidden items-center gap-3">
+<a href="tel:7028181800" class="text-primary">
+  <span class="material-symbols-outlined text-2xl">call</span>
+</a>
+<button id="mobile-menu-btn" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-primary p-1">
+  <span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
+</button>
 </div>
 </div>
-<div class="bg-slate-100/50 h-[1px] w-full"></div>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-outline-variant/10 shadow-lg">
+<div class="px-4 py-6 space-y-1 max-h-[80vh] overflow-y-auto">
+  <!-- Practice Areas Section -->
+  <p class="font-label text-[10px] uppercase tracking-[0.2em] text-on-tertiary-container font-bold px-3 pt-2 pb-3">Practice Areas</p>
+  <a href="/services/estate-planning/" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-surface-container-low transition-colors">
+    <span class="material-symbols-outlined text-lg text-on-tertiary-container">security</span>
+    <span class="text-sm font-medium text-primary">Estate Planning</span>
+  </a>
+  <a href="/services/probate/" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-surface-container-low transition-colors">
+    <span class="material-symbols-outlined text-lg text-on-tertiary-container">gavel</span>
+    <span class="text-sm font-medium text-primary">Probate</span>
+  </a>
+  <a href="/services/personal-injury/" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-surface-container-low transition-colors">
+    <span class="material-symbols-outlined text-lg text-on-tertiary-container">healing</span>
+    <span class="text-sm font-medium text-primary">Personal Injury</span>
+  </a>
+  <a href="/services/medical-malpractice/" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-surface-container-low transition-colors">
+    <span class="material-symbols-outlined text-lg text-on-tertiary-container">monitor_heart</span>
+    <span class="text-sm font-medium text-primary">Medical Malpractice</span>
+  </a>
+  <a href="/services/ftca-va-malpractice/" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-surface-container-low transition-colors">
+    <span class="material-symbols-outlined text-lg text-on-tertiary-container">local_hospital</span>
+    <span class="text-sm font-medium text-primary">FTCA / VA Malpractice</span>
+  </a>
+  <a href="/services/business-law/" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-surface-container-low transition-colors">
+    <span class="material-symbols-outlined text-lg text-on-tertiary-container">corporate_fare</span>
+    <span class="text-sm font-medium text-primary">Business Law</span>
+  </a>
+  <a href="/services/contract-law/" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-surface-container-low transition-colors">
+    <span class="material-symbols-outlined text-lg text-on-tertiary-container">handshake</span>
+    <span class="text-sm font-medium text-primary">Contract Law</span>
+  </a>
+
+  <!-- Divider -->
+  <div class="border-t border-outline-variant/10 my-4"></div>
+
+  <!-- Main Nav Links -->
+  <a href="/attorneys/" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-surface-container-low transition-colors">
+    <span class="material-symbols-outlined text-lg text-on-tertiary-container">people</span>
+    <span class="text-sm font-medium text-primary">Our Team</span>
+  </a>
+  <a href="/resources/" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-surface-container-low transition-colors">
+    <span class="material-symbols-outlined text-lg text-on-tertiary-container">menu_book</span>
+    <span class="text-sm font-medium text-primary">Resources</span>
+  </a>
+  <a href="/about/" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-surface-container-low transition-colors">
+    <span class="material-symbols-outlined text-lg text-on-tertiary-container">info</span>
+    <span class="text-sm font-medium text-primary">About Us</span>
+  </a>
+  <a href="/contact/" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-surface-container-low transition-colors">
+    <span class="material-symbols-outlined text-lg text-on-tertiary-container">mail</span>
+    <span class="text-sm font-medium text-primary">Contact</span>
+  </a>
+
+  <!-- CTA -->
+  <div class="pt-4">
+    <a href="/contact/" class="block w-full bg-primary text-on-primary text-center px-6 py-4 rounded-lg font-bold text-sm tracking-wide">
+      Free Consultation
+    </a>
+    <p class="text-center mt-3">
+      <a href="tel:7028181800" class="text-sm font-medium text-primary">(702) 818-1800</a>
+    </p>
+  </div>
+</div>
+</div>
 </nav>
